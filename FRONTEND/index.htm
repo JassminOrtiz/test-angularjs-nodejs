@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="angularApp">
+    <head>
+        <title>Introduction to AngularJS</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
+
+        <!-- load bootstrap and fontawesome via CDN -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        <style>
+            html, body
+            {
+                font-size: 1.1em;
+            }
+        </style>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        
+        <!-- load angular via CDN -->
+        <script src="//code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
+        <script src="app.js"></script>
+        <link rel="stylesheet" href="src/libraries/css/index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.1/angular-route.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+        <script src="src/controllers/ClientesController.js"></script>
+        <script src="src/controllers/VehiculosController.js"></script>
+        <script src="src/controllers/ContratosController.js"></script>
+              
+    </head>
+    <body ng-app="menu" ng-controller="mainController" ng-mouseup="elsewhrClicks($event)" class="ng-cloak">
+
+        <nav class="navbar navbar-inverse navbar-global navbar-fixed-top">
+            
+        </nav>
+        <nav class="navbar-primary">
+            <a href="#" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
+            <ul class="navbar-primary-menu">
+                <li>
+                  <a href="#/clientes"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Clientes</span></a>
+                  <a href="#/vehiculos"><span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Vehiculos</span></a>
+                  <a href="#/contratos"><span class="glyphicon glyphicon-cog"></span><span class="nav-label">Contratos</span></a>
+                </li>
+            </ul>
+        </nav>
+        <div class="main-content">
+          <div ng-view></div>
+        </div>
+        <script>
+          $('.btn-expand-collapse').click(function(e) {
+            $('.navbar-primary').toggleClass('collapsed');
+          });
+        </script>
+    </body>
+</html>
